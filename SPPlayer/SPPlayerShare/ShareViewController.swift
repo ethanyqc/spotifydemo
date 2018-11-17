@@ -21,18 +21,25 @@ class ShareViewController: UIViewController {
         
         let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
         let contentTypeURL = kUTTypeURL as String
-        
-        for attachment in extensionItem.attachments as! [NSItemProvider] {
-
+        if let attachments = extensionItem.attachments {
+            for attachment in attachments{
+                
                 attachment.loadItem(forTypeIdentifier: contentTypeURL, options: nil, completionHandler: { (results, error) in
-                    if let url = results as? URL? {
-                        print(url?.absoluteString)
+                    
+                    guard let url = results as? URL else {
+                        print("eror")
+                        return
+                    }
+                    OperationQueue.main.addOperation {
+                        print(url.absoluteString)
                     }
                     
                 })
-
-
+                
+                
+            }
         }
+
     }
 
 }
