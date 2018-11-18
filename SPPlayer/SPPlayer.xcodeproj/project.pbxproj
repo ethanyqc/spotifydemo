@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4228ED8821A12D5C00622F20 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C6F197218CEA0D00233548 /* SpotifyiOS.framework */; };
-		4228ED8921A12D7000622F20 /* Pods_SPPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28A80A85EFA87A99D527AC2 /* Pods_SPPlayer.framework */; };
 		42B2883421A0D1B4004EFA9A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2883321A0D1B4004EFA9A /* ShareViewController.swift */; };
 		42B2883721A0D1B4004EFA9A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B2883521A0D1B4004EFA9A /* MainInterface.storyboard */; };
 		42B2883B21A0D1B4004EFA9A /* SPPlayerShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42B2883121A0D1B4004EFA9A /* SPPlayerShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52AB83121252C5F283F629AD /* Pods_SPPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28A80A85EFA87A99D527AC2 /* Pods_SPPlayer.framework */; };
+		D064488363734DAEA49B7DA1 /* Pods_SPPlayerShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2AB5CE50773B3E5C097D4F /* Pods_SPPlayerShare.framework */; };
 		F9C6F186218CE9E800233548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6F185218CE9E800233548 /* AppDelegate.swift */; };
 		F9C6F188218CE9E800233548 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6F187218CE9E800233548 /* ViewController.swift */; };
 		F9C6F18B218CE9E800233548 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C6F189218CE9E800233548 /* Main.storyboard */; };
@@ -54,7 +54,10 @@
 		42B2884021A0D1C7004EFA9A /* SPPlayerShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SPPlayerShare.entitlements; sourceTree = "<group>"; };
 		42B2884121A0D1CD004EFA9A /* SPPlayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SPPlayer.entitlements; sourceTree = "<group>"; };
 		4B5B41F8F5E06D8DA6C11CC6 /* Pods-SPPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPPlayer/Pods-SPPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		AB2AB5CE50773B3E5C097D4F /* Pods_SPPlayerShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPPlayerShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28A80A85EFA87A99D527AC2 /* Pods_SPPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B15A269F2CE4ABC30FCABF /* Pods-SPPlayerShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPPlayerShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPPlayerShare/Pods-SPPlayerShare.debug.xcconfig"; sourceTree = "<group>"; };
+		F79C6A9524D321988CA873F8 /* Pods-SPPlayerShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPPlayerShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPPlayerShare/Pods-SPPlayerShare.release.xcconfig"; sourceTree = "<group>"; };
 		F9C6F182218CE9E800233548 /* SPPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C6F185218CE9E800233548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C6F187218CE9E800233548 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,8 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4228ED8921A12D7000622F20 /* Pods_SPPlayer.framework in Frameworks */,
 				4228ED8821A12D5C00622F20 /* SpotifyiOS.framework in Frameworks */,
+				D064488363734DAEA49B7DA1 /* Pods_SPPlayerShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E28A80A85EFA87A99D527AC2 /* Pods_SPPlayer.framework */,
+				AB2AB5CE50773B3E5C097D4F /* Pods_SPPlayerShare.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,6 +116,8 @@
 			children = (
 				04A89BC9D896EFE4EB342AC8 /* Pods-SPPlayer.debug.xcconfig */,
 				4B5B41F8F5E06D8DA6C11CC6 /* Pods-SPPlayer.release.xcconfig */,
+				E7B15A269F2CE4ABC30FCABF /* Pods-SPPlayerShare.debug.xcconfig */,
+				F79C6A9524D321988CA873F8 /* Pods-SPPlayerShare.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -159,6 +165,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42B2883E21A0D1B4004EFA9A /* Build configuration list for PBXNativeTarget "SPPlayerShare" */;
 			buildPhases = (
+				D6E50A033690E349763ED346 /* [CP] Check Pods Manifest.lock */,
 				42B2882D21A0D1B4004EFA9A /* Sources */,
 				42B2882E21A0D1B4004EFA9A /* Frameworks */,
 				42B2882F21A0D1B4004EFA9A /* Resources */,
@@ -302,6 +309,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D6E50A033690E349763ED346 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SPPlayerShare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -362,6 +387,7 @@
 /* Begin XCBuildConfiguration section */
 		42B2883C21A0D1B4004EFA9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7B15A269F2CE4ABC30FCABF /* Pods-SPPlayerShare.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SPPlayerShare/SPPlayerShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,6 +415,7 @@
 		};
 		42B2883D21A0D1B4004EFA9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F79C6A9524D321988CA873F8 /* Pods-SPPlayerShare.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SPPlayerShare/SPPlayerShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
