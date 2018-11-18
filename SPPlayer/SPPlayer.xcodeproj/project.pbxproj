@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4228ED8821A12D5C00622F20 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C6F197218CEA0D00233548 /* SpotifyiOS.framework */; };
+		4228ED8921A12D7000622F20 /* Pods_SPPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28A80A85EFA87A99D527AC2 /* Pods_SPPlayer.framework */; };
 		42B2883421A0D1B4004EFA9A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2883321A0D1B4004EFA9A /* ShareViewController.swift */; };
 		42B2883721A0D1B4004EFA9A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B2883521A0D1B4004EFA9A /* MainInterface.storyboard */; };
 		42B2883B21A0D1B4004EFA9A /* SPPlayerShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42B2883121A0D1B4004EFA9A /* SPPlayerShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -69,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4228ED8921A12D7000622F20 /* Pods_SPPlayer.framework in Frameworks */,
+				4228ED8821A12D5C00622F20 /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +366,10 @@
 				CODE_SIGN_ENTITLEMENTS = SPPlayerShare/SPPlayerShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3Z2A9TMTE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SPPlayerShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -369,9 +377,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admission.ios.SPPlayerShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SPPlayer/Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -383,6 +393,10 @@
 				CODE_SIGN_ENTITLEMENTS = SPPlayerShare/SPPlayerShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3Z2A9TMTE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SPPlayerShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -390,9 +404,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.admission.ios.SPPlayerShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SPPlayer/Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
