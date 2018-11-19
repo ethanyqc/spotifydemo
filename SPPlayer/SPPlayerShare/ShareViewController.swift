@@ -47,7 +47,7 @@ class ShareViewController: UIViewController {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         let keyboardHeight = keyboardSize.cgRectValue.height
-        bottom.constant = keyboardHeight+8
+        bottom.constant = keyboardHeight
         
         
     }

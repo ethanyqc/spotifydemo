@@ -26,10 +26,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8c-qq-zgB" customClass="RoundCorner" customModule="SPPlayerShare" customModuleProvider="target">
-                                <rect key="frame" x="8" y="359" width="359" height="300"/>
+                                <rect key="frame" x="8" y="319" width="359" height="340"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y5z-o6-gpQ">
-                                        <rect key="frame" x="0.0" y="42" width="359" height="168"/>
+                                        <rect key="frame" x="0.0" y="42" width="359" height="208"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="JiX-v4-gH0">
                                             <size key="itemSize" width="80" height="100"/>
@@ -83,7 +83,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dg-46-W2n">
-                                        <rect key="frame" x="0.0" y="210" width="359" height="90"/>
+                                        <rect key="frame" x="0.0" y="250" width="359" height="90"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmp-Ks-4Kq">
                                                 <rect key="frame" x="0.0" y="46" width="359" height="40"/>
@@ -122,7 +122,7 @@
                                     <constraint firstAttribute="bottom" secondItem="5Dg-46-W2n" secondAttribute="bottom" id="Ae0-N3-gJp"/>
                                     <constraint firstItem="hLq-CC-cLv" firstAttribute="centerX" secondItem="t8c-qq-zgB" secondAttribute="centerX" id="IT7-iW-8OR"/>
                                     <constraint firstAttribute="trailing" secondItem="y5z-o6-gpQ" secondAttribute="trailing" id="NlA-GK-dTC"/>
-                                    <constraint firstAttribute="height" constant="300" id="QPS-li-LmY"/>
+                                    <constraint firstAttribute="height" constant="340" id="QPS-li-LmY"/>
                                     <constraint firstItem="y5z-o6-gpQ" firstAttribute="leading" secondItem="t8c-qq-zgB" secondAttribute="leading" id="S5b-vL-uS2"/>
                                     <constraint firstItem="y5z-o6-gpQ" firstAttribute="top" secondItem="mmF-gR-a3c" secondAttribute="bottom" id="UN8-f3-KVX"/>
                                     <constraint firstAttribute="trailing" secondItem="5Dg-46-W2n" secondAttribute="trailing" id="jDR-Qd-kxQ"/>
