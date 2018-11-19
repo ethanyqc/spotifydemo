@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4228ED8821A12D5C00622F20 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C6F197218CEA0D00233548 /* SpotifyiOS.framework */; };
+		4238C74921A269C1005396AA /* ShareGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238C74821A269C1005396AA /* ShareGroupCollectionViewCell.swift */; };
+		4238C74C21A278C7005396AA /* RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238C74B21A278C7005396AA /* RoundCorner.swift */; };
 		42B2883421A0D1B4004EFA9A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2883321A0D1B4004EFA9A /* ShareViewController.swift */; };
 		42B2883721A0D1B4004EFA9A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B2883521A0D1B4004EFA9A /* MainInterface.storyboard */; };
 		42B2883B21A0D1B4004EFA9A /* SPPlayerShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42B2883121A0D1B4004EFA9A /* SPPlayerShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		04A89BC9D896EFE4EB342AC8 /* Pods-SPPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPPlayer/Pods-SPPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		4238C74821A269C1005396AA /* ShareGroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareGroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		4238C74B21A278C7005396AA /* RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCorner.swift; sourceTree = "<group>"; };
 		42B2883121A0D1B4004EFA9A /* SPPlayerShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SPPlayerShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B2883321A0D1B4004EFA9A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		42B2883621A0D1B4004EFA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -100,9 +104,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4238C74721A26997005396AA /* CustomCollectionCellClasses */ = {
+			isa = PBXGroup;
+			children = (
+				4238C74821A269C1005396AA /* ShareGroupCollectionViewCell.swift */,
+			);
+			path = CustomCollectionCellClasses;
+			sourceTree = "<group>";
+		};
+		4238C74A21A278AC005396AA /* CustomeView */ = {
+			isa = PBXGroup;
+			children = (
+				4238C74B21A278C7005396AA /* RoundCorner.swift */,
+			);
+			path = CustomeView;
+			sourceTree = "<group>";
+		};
 		42B2883221A0D1B4004EFA9A /* SPPlayerShare */ = {
 			isa = PBXGroup;
 			children = (
+				4238C74A21A278AC005396AA /* CustomeView */,
+				4238C74721A26997005396AA /* CustomCollectionCellClasses */,
 				42B2884021A0D1C7004EFA9A /* SPPlayerShare.entitlements */,
 				42B2883321A0D1B4004EFA9A /* ShareViewController.swift */,
 				42B2883521A0D1B4004EFA9A /* MainInterface.storyboard */,
@@ -334,7 +356,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4238C74921A269C1005396AA /* ShareGroupCollectionViewCell.swift in Sources */,
 				42B2883421A0D1B4004EFA9A /* ShareViewController.swift in Sources */,
+				4238C74C21A278C7005396AA /* RoundCorner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

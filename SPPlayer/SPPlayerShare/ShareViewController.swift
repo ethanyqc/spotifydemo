@@ -12,10 +12,48 @@ import MobileCoreServices
 
 class ShareViewController: UIViewController {
 
+    var testArr = ["Abby", "Bob", "Catherine", "David", "Ethan", "Frank", "Gordon"]
+    var nameSet = Set<String>()
+    @IBOutlet weak var shareViewPopup: UIView!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var shareTextField: UITextField!
+    @IBOutlet weak var textFieldView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var textFieldViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var bottom: NSLayoutConstraint!
+    @IBOutlet weak var textFireldViewBotton: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAndSetContentFromContext()
+        collectionView.allowsMultipleSelection = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        textFireldViewBotton.constant = -90
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+    }
+
+    @IBAction func sendAction(_ sender: Any) {
+    }
+    @IBAction func dismiss(_ sender: Any) {
+        extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+    }
+    @objc func keyboardWillShow(notification:NSNotification){
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardHeight = keyboardSize.cgRectValue.height
+        bottom.constant = keyboardHeight+8
+        
+        
+    }
+    
+    @objc func keyboardWillHide(notification:NSNotification){
+        bottom.constant = 8
     }
     private func fetchAndSetContentFromContext() {
         
@@ -42,4 +80,45 @@ class ShareViewController: UIViewController {
 
     }
 
+}
+extension ShareViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return testArr.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shareContactCell", for: indexPath) as! ShareGroupCollectionViewCell
+        cell.nameLbl.text = testArr[indexPath.row]
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shareContactCell", for: indexPath) as! ShareGroupCollectionViewCell
+        if cell.isSelected {
+            nameSet.insert(testArr[indexPath.row])
+            if nameSet.count > 0 {
+                textFireldViewBotton.constant = 0
+                self.shareTextField.resignFirstResponder()
+            }
+            else{
+                textFireldViewBotton.constant = -90
+            }
+        }
+        print(nameSet)
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shareContactCell", for: indexPath) as! ShareGroupCollectionViewCell
+        if !cell.isSelected {
+            nameSet.remove(testArr[indexPath.row])
+            if nameSet.count > 0 {
+                textFireldViewBotton.constant = 0
+                self.shareTextField.resignFirstResponder()
+            }
+            else{
+                textFireldViewBotton.constant = -90
+            }
+        }
+        print(nameSet)
+    }
+    
+    
 }
