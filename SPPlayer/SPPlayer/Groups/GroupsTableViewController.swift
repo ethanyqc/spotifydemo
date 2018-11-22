@@ -19,9 +19,12 @@ class GroupsTableViewController: UITableViewController {
         self.title = "Groups"
     }
     
-    func getTimestamp(_ data:String)->String{
+    func getTimestamp(_ data:String)->Int64{
         let arr = data.components(separatedBy: ":")
-        return arr.last ?? ""
+        if let num = Int64(arr.last!) {
+            return num
+        }
+        return 0
     }
     func getTrackID(_ data: String)->String{
         return data.components(separatedBy: ":")[2]
@@ -59,12 +62,13 @@ class GroupsTableViewController: UITableViewController {
         
         if let accessToken = UserDefaults.standard.string(forKey: "access-token-key"){
             let dataArray = dic[Array(dic.keys)[indexPath.row]]
-            let first = dataArray?.first
-            requestingTrack(accessToken: accessToken, trackID: getTrackID(first!)) { (track) in
-                cell.groupName.text = Array(self.dic.keys)[indexPath.row]
-                cell.timestamp.text = timeAgoSinceDate(date: Date(timeIntervalSince1970: TimeInterval(Int64(self.getTimestamp(first!))!)) as NSDate, numericDates: false)
-                cell.songDataPreview.text = track.artists?.first?.name
-                
+            if let first = dataArray?.first{
+                requestingTrack(accessToken: accessToken, trackID: getTrackID(first)) { (track) in
+                    cell.groupName.text = Array(self.dic.keys)[indexPath.row]
+                    cell.timestamp.text = timeAgoSinceDate(date: Date(timeIntervalSince1970: TimeInterval(self.getTimestamp(first))) as NSDate, numericDates: false)
+                    cell.songDataPreview.text = track.artists?.first?.name
+                    
+                }
             }
   
         }
