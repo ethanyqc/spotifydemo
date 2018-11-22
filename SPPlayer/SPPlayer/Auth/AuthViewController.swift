@@ -70,7 +70,8 @@ class AuthViewController: UIViewController {
     @IBAction func authToSpotify(_ sender: Any) {
         if !(appRemote.isConnected) {
             if (!appRemote.authorizeAndPlayURI(trackIdentifier)) {
-                
+                // The Spotify app is not installed, present the user with an App Store page
+                //showAppStoreInstall()
             }
         }
         else {

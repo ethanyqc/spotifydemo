@@ -24,7 +24,7 @@ struct CoreFunc {
                     // retrieve groupValue
                     if var groupSongList = list[groupName, default: []] as? [String] {
                         //update array
-                        groupSongList.append(songObj.stringfy)
+                        groupSongList.insert(songObj.stringfy, at: 0)
                         //set record
                         list[groupName] = groupSongList
                         userDefaults.set(list, forKey: "groups")

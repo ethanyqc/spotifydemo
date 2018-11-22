@@ -8,6 +8,7 @@ target 'SPPlayer' do
   # Pods for SPPlayer
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireObjectMapper', '~> 5.0'
+  pod 'Kingfisher'
 
 end
 

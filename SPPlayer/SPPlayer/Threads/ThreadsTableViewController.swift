@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireObjectMapper
 import Alamofire
+import Kingfisher
 class ThreadsTableViewController: UITableViewController {
 
     var threads : [String] = []
@@ -35,14 +36,12 @@ class ThreadsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "pause", style: .done, target: self, action: #selector(pause))
+        
     }
-
+    @objc func pause(){
+        appRemote.playerAPI?.pause(nil)
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,14 +54,20 @@ class ThreadsTableViewController: UITableViewController {
         return threads.count
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "threadsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "threadsCell", for: indexPath) as! ThreadTableViewCell
         
         if let accessToken = UserDefaults.standard.string(forKey: "access-token-key"){
             let trackID = threads[indexPath.row].components(separatedBy: ":")[2]
             requestingTrack(accessToken: accessToken, trackID: trackID) { (track) in
-                cell.textLabel?.text = track.name
+                cell.threadMsg.text = track.name
+                let url = URL(string: track.album?.images?.first?.url ?? "https://picsum.photos/200")!
+                cell.trackImg.kf.setImage(with: url)
+                print(track.toJSONString())
             }
       
             
@@ -79,12 +84,14 @@ class ThreadsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !(appRemote.isConnected) {
             if (!appRemote.authorizeAndPlayURI(parseOutTrackID(threads[indexPath.row]))) {
-                
+                // The Spotify app is not installed, present the user with an App Store page
+                //showAppStoreInstall()
             }
         }
         else {
             appRemote.playerAPI?.play(parseOutTrackID(threads[indexPath.row]), callback: nil)
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
  
 

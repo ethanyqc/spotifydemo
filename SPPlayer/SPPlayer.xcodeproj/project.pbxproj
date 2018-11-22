@@ -22,6 +22,11 @@
 		42A1DDFE21A60D0700B66584 /* Threads.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A1DDFD21A60D0700B66584 /* Threads.storyboard */; };
 		42A1DE0021A60D1A00B66584 /* ThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1DDFF21A60D1A00B66584 /* ThreadsTableViewController.swift */; };
 		42A1DE0421A6455600B66584 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1DE0321A6455600B66584 /* Track.swift */; };
+		42A1DE0721A6580F00B66584 /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1DE0621A6580F00B66584 /* ThreadTableViewCell.swift */; };
+		42A1DE0B21A6596300B66584 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1DE0A21A6596300B66584 /* CardView.swift */; };
+		42A1DE0E21A6611E00B66584 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1DE0D21A6611E00B66584 /* GroupTableViewCell.swift */; };
+		42A1DE1021A669F700B66584 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1DE0F21A669F700B66584 /* CircleView.swift */; };
+		42A1DE1221A66B1A00B66584 /* Timesago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1DE1121A66B1A00B66584 /* Timesago.swift */; };
 		42B2883421A0D1B4004EFA9A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2883321A0D1B4004EFA9A /* ShareViewController.swift */; };
 		42B2883721A0D1B4004EFA9A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B2883521A0D1B4004EFA9A /* MainInterface.storyboard */; };
 		42B2883B21A0D1B4004EFA9A /* SPPlayerShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42B2883121A0D1B4004EFA9A /* SPPlayerShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -70,6 +75,11 @@
 		42A1DDFD21A60D0700B66584 /* Threads.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Threads.storyboard; sourceTree = "<group>"; };
 		42A1DDFF21A60D1A00B66584 /* ThreadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableViewController.swift; sourceTree = "<group>"; };
 		42A1DE0321A6455600B66584 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		42A1DE0621A6580F00B66584 /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
+		42A1DE0A21A6596300B66584 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		42A1DE0D21A6611E00B66584 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		42A1DE0F21A669F700B66584 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		42A1DE1121A66B1A00B66584 /* Timesago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timesago.swift; sourceTree = "<group>"; };
 		42B2883121A0D1B4004EFA9A /* SPPlayerShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SPPlayerShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B2883321A0D1B4004EFA9A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		42B2883621A0D1B4004EFA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -160,6 +170,7 @@
 		42A1DDF721A5072B00B66584 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
+				42A1DE0C21A660FD00B66584 /* CustomCell */,
 				42A1DDF821A5074400B66584 /* Groups.storyboard */,
 				42A1DDFA21A5077100B66584 /* GroupsTableViewController.swift */,
 			);
@@ -169,10 +180,29 @@
 		42A1DDFC21A60CEA00B66584 /* Threads */ = {
 			isa = PBXGroup;
 			children = (
+				42A1DE0521A657F100B66584 /* CustomCell */,
 				42A1DDFD21A60D0700B66584 /* Threads.storyboard */,
 				42A1DDFF21A60D1A00B66584 /* ThreadsTableViewController.swift */,
 			);
 			path = Threads;
+			sourceTree = "<group>";
+		};
+		42A1DE0521A657F100B66584 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				42A1DE0621A6580F00B66584 /* ThreadTableViewCell.swift */,
+				42A1DE0A21A6596300B66584 /* CardView.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		42A1DE0C21A660FD00B66584 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				42A1DE0D21A6611E00B66584 /* GroupTableViewCell.swift */,
+				42A1DE0F21A669F700B66584 /* CircleView.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		42B2883221A0D1B4004EFA9A /* SPPlayerShare */ = {
@@ -226,6 +256,7 @@
 				42B2884121A0D1CD004EFA9A /* SPPlayer.entitlements */,
 				F9C6F185218CE9E800233548 /* AppDelegate.swift */,
 				427CF64821A4D2F600DFAB2F /* CoreFunc.swift */,
+				42A1DE1121A66B1A00B66584 /* Timesago.swift */,
 				427CF64A21A4D82A00DFAB2F /* Objects */,
 				42A1DDF721A5072B00B66584 /* Groups */,
 				42A1DDFC21A60CEA00B66584 /* Threads */,
@@ -360,12 +391,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SPPlayer/Pods-SPPlayer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,8 +468,13 @@
 				427CF65621A4E41400DFAB2F /* RoundCorner.swift in Sources */,
 				427CF65521A4E3EF00DFAB2F /* ShareGroupCollectionViewCell.swift in Sources */,
 				42A1DE0021A60D1A00B66584 /* ThreadsTableViewController.swift in Sources */,
+				42A1DE0721A6580F00B66584 /* ThreadTableViewCell.swift in Sources */,
+				42A1DE1221A66B1A00B66584 /* Timesago.swift in Sources */,
 				427CF65221A4E17300DFAB2F /* ShareViewController.swift in Sources */,
 				427CF65321A4E18000DFAB2F /* CoreFunc.swift in Sources */,
+				42A1DE0B21A6596300B66584 /* CardView.swift in Sources */,
+				42A1DE0E21A6611E00B66584 /* GroupTableViewCell.swift in Sources */,
+				42A1DE1021A669F700B66584 /* CircleView.swift in Sources */,
 				427CF64C21A4D85100DFAB2F /* songClientObj.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

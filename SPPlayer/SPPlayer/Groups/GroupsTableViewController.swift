@@ -7,20 +7,37 @@
 //
 
 import UIKit
+import AlamofireObjectMapper
+import Alamofire
 
 class GroupsTableViewController: UITableViewController {
 
     var dic : [String : [String]] = CoreFunc.retrieveDict()
+    let baseURL = "https://api.spotify.com/v1/tracks/"
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.title = "Groups"
+    }
+    
+    func getTimestamp(_ data:String)->String{
+        let arr = data.components(separatedBy: ":")
+        return arr.last ?? ""
+    }
+    func getTrackID(_ data: String)->String{
+        return data.components(separatedBy: ":")[2]
     }
 
+    func requestingTrack(accessToken: String, trackID : String, completion: @escaping (Track) -> Void){
+        let headers: [String: String] = [
+            "Authorization": "Bearer \(accessToken)"
+        ]
+        
+        Alamofire.request(baseURL+trackID, headers: headers).responseObject { (response: DataResponse<Track>) in
+            if let value = response.result.value {
+                completion(value)
+            }
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,12 +50,24 @@ class GroupsTableViewController: UITableViewController {
         return dic.count
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupTableViewCell
         
-        cell.textLabel?.text = Array(dic.keys)[indexPath.row]
-        // Configure the cell...
+        if let accessToken = UserDefaults.standard.string(forKey: "access-token-key"){
+            let dataArray = dic[Array(dic.keys)[indexPath.row]]
+            let first = dataArray?.first
+            requestingTrack(accessToken: accessToken, trackID: getTrackID(first!)) { (track) in
+                cell.groupName.text = Array(self.dic.keys)[indexPath.row]
+                cell.timestamp.text = timeAgoSinceDate(date: Date(timeIntervalSince1970: TimeInterval(Int64(self.getTimestamp(first!))!)) as NSDate, numericDates: false)
+                cell.songDataPreview.text = track.artists?.first?.name
+                
+            }
+  
+        }
 
         return cell
     }
@@ -48,6 +77,7 @@ class GroupsTableViewController: UITableViewController {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Threads", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "threadsTVC") as! ThreadsTableViewController
             nextViewController.threads = threads
+            nextViewController.title = Array(dic.keys)[indexPath.row]
             self.navigationController?.pushViewController(nextViewController, animated:true)
         }
         

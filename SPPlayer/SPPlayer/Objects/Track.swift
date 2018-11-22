@@ -12,8 +12,8 @@ import ObjectMapper
 class Track: Mappable {
     var name: String?
     var uri: String?
-    var images: [trackImage]?
-    
+    var album: Album?
+    var artists: [Artist]?
     required init?(map: Map){
         
     }
@@ -21,16 +21,46 @@ class Track: Mappable {
     func mapping(map: Map) {
         name <- map["name"]
         uri <- map["uri"]
-        images <- map["images"]
+        album <- map["album"]
+        artists <- map["artists"]
+        
     }
 }
+
+class Artist: Mappable {
+    var name: String?
+    required init?(map: Map){
+        
+    }
+    func mapping(map: Map) {
+        name <- map["name"]
+    }
+    
+}
+
+class Album: Mappable {
+    var images: [trackImage]?
+    required init?(map: Map){
+        
+    }
+    func mapping(map: Map) {
+        images <- map["images"]
+
+    }
+}
+
 class trackImage: Mappable {
     var url: String?
+    var height: Int?
+    var width: Int?
+    
     required init?(map: Map){
         
     }
     
     func mapping(map: Map) {
         url <- map["url"]
+        height <- map["height"]
+        width <- map["width"]
     }
 }
