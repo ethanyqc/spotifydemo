@@ -10,13 +10,25 @@
 		4228ED8821A12D5C00622F20 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C6F197218CEA0D00233548 /* SpotifyiOS.framework */; };
 		4238C74921A269C1005396AA /* ShareGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238C74821A269C1005396AA /* ShareGroupCollectionViewCell.swift */; };
 		4238C74C21A278C7005396AA /* RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238C74B21A278C7005396AA /* RoundCorner.swift */; };
+		427CF64C21A4D85100DFAB2F /* songClientObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CF64B21A4D85100DFAB2F /* songClientObj.swift */; };
+		427CF65121A4E16A00DFAB2F /* songClientObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CF64B21A4D85100DFAB2F /* songClientObj.swift */; };
+		427CF65221A4E17300DFAB2F /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2883321A0D1B4004EFA9A /* ShareViewController.swift */; };
+		427CF65321A4E18000DFAB2F /* CoreFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CF64821A4D2F600DFAB2F /* CoreFunc.swift */; };
+		427CF65421A4E18400DFAB2F /* CoreFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CF64821A4D2F600DFAB2F /* CoreFunc.swift */; };
+		427CF65521A4E3EF00DFAB2F /* ShareGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238C74821A269C1005396AA /* ShareGroupCollectionViewCell.swift */; };
+		427CF65621A4E41400DFAB2F /* RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238C74B21A278C7005396AA /* RoundCorner.swift */; };
+		42A1DDF921A5074400B66584 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A1DDF821A5074400B66584 /* Groups.storyboard */; };
+		42A1DDFB21A5077100B66584 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1DDFA21A5077100B66584 /* GroupsTableViewController.swift */; };
+		42A1DDFE21A60D0700B66584 /* Threads.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A1DDFD21A60D0700B66584 /* Threads.storyboard */; };
+		42A1DE0021A60D1A00B66584 /* ThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1DDFF21A60D1A00B66584 /* ThreadsTableViewController.swift */; };
+		42A1DE0421A6455600B66584 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1DE0321A6455600B66584 /* Track.swift */; };
 		42B2883421A0D1B4004EFA9A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2883321A0D1B4004EFA9A /* ShareViewController.swift */; };
 		42B2883721A0D1B4004EFA9A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B2883521A0D1B4004EFA9A /* MainInterface.storyboard */; };
 		42B2883B21A0D1B4004EFA9A /* SPPlayerShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42B2883121A0D1B4004EFA9A /* SPPlayerShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52AB83121252C5F283F629AD /* Pods_SPPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28A80A85EFA87A99D527AC2 /* Pods_SPPlayer.framework */; };
 		D064488363734DAEA49B7DA1 /* Pods_SPPlayerShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2AB5CE50773B3E5C097D4F /* Pods_SPPlayerShare.framework */; };
 		F9C6F186218CE9E800233548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6F185218CE9E800233548 /* AppDelegate.swift */; };
-		F9C6F188218CE9E800233548 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6F187218CE9E800233548 /* ViewController.swift */; };
+		F9C6F188218CE9E800233548 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6F187218CE9E800233548 /* AuthViewController.swift */; };
 		F9C6F18B218CE9E800233548 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C6F189218CE9E800233548 /* Main.storyboard */; };
 		F9C6F18D218CE9F100233548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C6F18C218CE9F100233548 /* Assets.xcassets */; };
 		F9C6F190218CE9F100233548 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C6F18E218CE9F100233548 /* LaunchScreen.storyboard */; };
@@ -51,6 +63,13 @@
 		04A89BC9D896EFE4EB342AC8 /* Pods-SPPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPPlayer/Pods-SPPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		4238C74821A269C1005396AA /* ShareGroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareGroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		4238C74B21A278C7005396AA /* RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCorner.swift; sourceTree = "<group>"; };
+		427CF64821A4D2F600DFAB2F /* CoreFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreFunc.swift; sourceTree = "<group>"; };
+		427CF64B21A4D85100DFAB2F /* songClientObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = songClientObj.swift; sourceTree = "<group>"; };
+		42A1DDF821A5074400B66584 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
+		42A1DDFA21A5077100B66584 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		42A1DDFD21A60D0700B66584 /* Threads.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Threads.storyboard; sourceTree = "<group>"; };
+		42A1DDFF21A60D1A00B66584 /* ThreadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableViewController.swift; sourceTree = "<group>"; };
+		42A1DE0321A6455600B66584 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		42B2883121A0D1B4004EFA9A /* SPPlayerShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SPPlayerShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B2883321A0D1B4004EFA9A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		42B2883621A0D1B4004EFA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -64,7 +83,7 @@
 		F79C6A9524D321988CA873F8 /* Pods-SPPlayerShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPPlayerShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPPlayerShare/Pods-SPPlayerShare.release.xcconfig"; sourceTree = "<group>"; };
 		F9C6F182218CE9E800233548 /* SPPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C6F185218CE9E800233548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9C6F187218CE9E800233548 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F9C6F187218CE9E800233548 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F9C6F18A218CE9E800233548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9C6F18C218CE9F100233548 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9C6F18F218CE9F100233548 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,6 +139,42 @@
 			path = CustomeView;
 			sourceTree = "<group>";
 		};
+		427CF64A21A4D82A00DFAB2F /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				427CF64B21A4D85100DFAB2F /* songClientObj.swift */,
+				42A1DE0321A6455600B66584 /* Track.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		427CF65721A4E93000DFAB2F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F9C6F187218CE9E800233548 /* AuthViewController.swift */,
+				F9C6F189218CE9E800233548 /* Main.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		42A1DDF721A5072B00B66584 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				42A1DDF821A5074400B66584 /* Groups.storyboard */,
+				42A1DDFA21A5077100B66584 /* GroupsTableViewController.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		42A1DDFC21A60CEA00B66584 /* Threads */ = {
+			isa = PBXGroup;
+			children = (
+				42A1DDFD21A60D0700B66584 /* Threads.storyboard */,
+				42A1DDFF21A60D1A00B66584 /* ThreadsTableViewController.swift */,
+			);
+			path = Threads;
+			sourceTree = "<group>";
+		};
 		42B2883221A0D1B4004EFA9A /* SPPlayerShare */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,8 +225,11 @@
 			children = (
 				42B2884121A0D1CD004EFA9A /* SPPlayer.entitlements */,
 				F9C6F185218CE9E800233548 /* AppDelegate.swift */,
-				F9C6F187218CE9E800233548 /* ViewController.swift */,
-				F9C6F189218CE9E800233548 /* Main.storyboard */,
+				427CF64821A4D2F600DFAB2F /* CoreFunc.swift */,
+				427CF64A21A4D82A00DFAB2F /* Objects */,
+				42A1DDF721A5072B00B66584 /* Groups */,
+				42A1DDFC21A60CEA00B66584 /* Threads */,
+				427CF65721A4E93000DFAB2F /* Auth */,
 				F9C6F18C218CE9F100233548 /* Assets.xcassets */,
 				F9C6F18E218CE9F100233548 /* LaunchScreen.storyboard */,
 				F9C6F191218CE9F100233548 /* Info.plist */,
@@ -282,6 +340,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42A1DDF921A5074400B66584 /* Groups.storyboard in Resources */,
+				42A1DDFE21A60D0700B66584 /* Threads.storyboard in Resources */,
 				F9C6F190218CE9F100233548 /* LaunchScreen.storyboard in Resources */,
 				F9C6F18D218CE9F100233548 /* Assets.xcassets in Resources */,
 				F9C6F18B218CE9E800233548 /* Main.storyboard in Resources */,
@@ -357,7 +417,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4238C74921A269C1005396AA /* ShareGroupCollectionViewCell.swift in Sources */,
+				427CF65121A4E16A00DFAB2F /* songClientObj.swift in Sources */,
 				42B2883421A0D1B4004EFA9A /* ShareViewController.swift in Sources */,
+				427CF65421A4E18400DFAB2F /* CoreFunc.swift in Sources */,
 				4238C74C21A278C7005396AA /* RoundCorner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,8 +428,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9C6F188218CE9E800233548 /* ViewController.swift in Sources */,
+				F9C6F188218CE9E800233548 /* AuthViewController.swift in Sources */,
+				42A1DE0421A6455600B66584 /* Track.swift in Sources */,
+				42A1DDFB21A5077100B66584 /* GroupsTableViewController.swift in Sources */,
 				F9C6F186218CE9E800233548 /* AppDelegate.swift in Sources */,
+				427CF65621A4E41400DFAB2F /* RoundCorner.swift in Sources */,
+				427CF65521A4E3EF00DFAB2F /* ShareGroupCollectionViewCell.swift in Sources */,
+				42A1DE0021A60D1A00B66584 /* ThreadsTableViewController.swift in Sources */,
+				427CF65221A4E17300DFAB2F /* ShareViewController.swift in Sources */,
+				427CF65321A4E18000DFAB2F /* CoreFunc.swift in Sources */,
+				427CF64C21A4D85100DFAB2F /* songClientObj.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

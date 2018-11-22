@@ -12,8 +12,9 @@ import MobileCoreServices
 
 class ShareViewController: UIViewController {
 
-    var testArr = ["Abby", "Bob", "Catherine", "David", "Ethan", "Frank", "Gordon"]
+    var testArr = ["Abby", "Bob", "Catherine", "David", "Ethan", "Frank", "Gordon", "Harry"]
     var nameSet = Set<String>()
+    var url = ""
     @IBOutlet weak var shareViewPopup: UIView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var shareTextField: UITextField!
@@ -33,12 +34,25 @@ class ShareViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        shareViewPopup.fadeIn()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        shareViewPopup.fadeOut()
+    }
 
     @IBAction func sendAction(_ sender: Any) {
+        //MARK: share song action and complete extension action
+        if let text = self.shareTextField.text {
+            for name in Array(nameSet) {
+                CoreFunc.saveIDToGroup(name, CoreFunc.retriveIdFromUrl(self.url), text)
+            }
+            extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+        }
+
     }
     @IBAction func dismiss(_ sender: Any) {
         extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
@@ -69,6 +83,7 @@ class ShareViewController: UIViewController {
                         return
                     }
                     OperationQueue.main.addOperation {
+                        self.url = url.absoluteString
                         print(url.absoluteString)
                     }
                     
@@ -97,7 +112,6 @@ extension ShareViewController : UICollectionViewDelegate, UICollectionViewDataSo
             nameSet.insert(testArr[indexPath.row])
             if nameSet.count > 0 {
                 textFireldViewBotton.constant = 0
-                self.shareTextField.resignFirstResponder()
             }
             else{
                 textFireldViewBotton.constant = -90
@@ -111,7 +125,6 @@ extension ShareViewController : UICollectionViewDelegate, UICollectionViewDataSo
             nameSet.remove(testArr[indexPath.row])
             if nameSet.count > 0 {
                 textFireldViewBotton.constant = 0
-                self.shareTextField.resignFirstResponder()
             }
             else{
                 textFireldViewBotton.constant = -90
@@ -121,4 +134,17 @@ extension ShareViewController : UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     
+}
+
+extension UIView {
+    func fadeIn(_ duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.alpha = 1.0
+        }, completion: completion)  }
+    
+    func fadeOut(_ duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.alpha = 0.0
+        }, completion: completion)
+    }
 }
