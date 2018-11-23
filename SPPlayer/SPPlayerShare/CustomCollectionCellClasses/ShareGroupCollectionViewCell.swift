@@ -16,7 +16,7 @@ class ShareGroupCollectionViewCell: UICollectionViewCell {
         didSet{
             if self.isSelected
             {
-                self.contentView.backgroundColor = UIColor.red
+                self.contentView.backgroundColor = UIColor.lightGray
             }
             else
             {
